@@ -1,0 +1,71 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["Title"] = "Code bang Razor";
+}
+
+<div>
+    <h1>@ViewData["Title"]</h1>
+    @{
+        var name = " Mai Anh";
+        int age = 20;
+        string email = "pma@gmail.com";
+		string address = "Ha Noi";
+    }
+    
+</div>
+
+<div class= "alert alert-danger">
+	<h1>@ViewData["Title"]</h1>
+    <p>Ten: @name</p>
+    <p>Tuoi: @age</p>
+    <p>Dia chi: @address</p>
+    <p> Email: @email</p>
+
+    @{
+		var greeting = "Chao mung ban den voi MVC" + name + ". Chuc ban may man!";
+		var weekday = DateTime.Now.DayOfWeek;
+		var greetingDate = "Hom nay la thu: " + weekday;
+    }
+    <h2>@greeting</h2>
+    <p>@greetingDate</p>
+</div>
+
+<div>
+    <h2>Cau truc if else</h2>
+    @if (age < 18)
+    {
+        <p class="alert alert-success">Bạn chưa đủ tuổi trưởng thành</p>
+    }
+    else if (age >= 18 && age < 60)
+    {
+        <p class="alert alert-info">Bạn là người trưởng thành</p>
+    }
+    else
+    {
+        <p class="alert alert-warning"> Bạn là người cao tuổi</p>
+    }
+</div>
+
+<div>
+	<h2>Cau truc for</h2>
+	<ul>
+		@for (int i = 1; i <= 5; i++)
+		{
+			<li>Item @i</li>
+		}
+	</ul>
+    <hr />
+    @for (int i = 0; i < 10; i++)
+    {
+        if (i % 2 == 0)
+        {
+            <button class="btn btn-danger">@i</button>
+        }
+        else
+        {
+            <button class="btn btn-success">@i</button>
+        }
+    }
+</div>
